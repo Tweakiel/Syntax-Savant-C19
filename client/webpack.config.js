@@ -16,6 +16,7 @@ module.exports = () => {
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
+      assetmoduleFilename: "assets/[name][ext]",
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -27,6 +28,7 @@ module.exports = () => {
         swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
+        filename: "manifest.json",
         name: "Syntax Savant",
         short_name: "Text Editor",
         description: "Simple Text Editor :)",
